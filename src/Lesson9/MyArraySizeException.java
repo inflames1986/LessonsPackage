@@ -1,9 +1,7 @@
 package Lesson9;
 
 
-public class MyArraySizeException extends RuntimeException {
-
-}
+public class MyArraySizeException extends RuntimeException {}
 
 
 
