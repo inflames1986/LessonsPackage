@@ -34,11 +34,11 @@ public class Main {
 
                 static int sum(String[][] arr) throws MyArraySizeException, MyArrayDataException {
             if (arr.length != ARRSIZE) {// если количество строк не равна сайз
-                throw new MyArraySizeException();//лови АррэйСайз исключение
+                throw new MyArraySizeException("Ошибка размера массива");//лови АррэйСайз исключение
             }
             for (int i = 0; i < arr.length; i++) {
                 if (arr[i].length != ARRSIZE) {// если длина строки массива не равн сайз
-                    throw new MyArraySizeException();// лови АррэйСайз исключение
+                    throw new MyArraySizeException("Ошибка размера массива");// лови АррэйСайз исключение
 
                 }
             }
