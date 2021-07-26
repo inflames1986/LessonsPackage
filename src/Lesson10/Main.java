@@ -26,6 +26,8 @@ public class Main {
 
         /*=================================================================================================*/
 
+        /*=====================Задание №2===================================*/
+
         Subscriber subscriber1 = new Subscriber("Пончиков", new HashSet<>(Arrays.asList("2223344", "2234343", "44334534")));
         Subscriber subscriber2 = new Subscriber("Блинов", new HashSet<>(Arrays.asList("2223344")));
         Subscriber subscriber3 = new Subscriber("Борщев", new HashSet<>(Arrays.asList("26785847", "2488784")));
@@ -43,7 +45,6 @@ public class Main {
         subscribers.put(subscriber6.getFam(), subscriber6.getNumbers());
         subscribers.put(subscriber7.getFam(), subscriber7.getNumbers());
 
-
 //        System.out.println(subscriber1.toString());
         System.out.println(subscribers.toString());
 
@@ -58,33 +59,18 @@ public class Main {
         System.out.println("Введите номер телефона");
         String num = sc.nextLine();
         Set<String> number = new HashSet(Arrays.asList(num));
-
         subscribers.put(name, new HashSet(Arrays.asList(number)));
-
         System.out.println(subscribers.toString());
-
 
         System.out.println("Введите фамилию для поиска номера телефона");
         String fam = sc.nextLine();
 
         for (Map.Entry<String, Set<String>> stringSetEntry : subscribers.entrySet()) {
-
             if (fam.equals(stringSetEntry.getKey())) {
-
-//            System.out.println(stringSetEntry);
                 System.out.println(stringSetEntry.getKey() + " " + stringSetEntry.getValue());
 
             }
-//
-//            for (int i = 0; i < fam.length(); i++) {
-//                if (fam.equals(stringSetEntry.getKey())) {
-//
-//
-//
-//
-//                }
         }
-
     }
 }
 
