@@ -59,31 +59,28 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             String name = sc.nextLine();
             System.out.println("Введите номер телефона");
-            String number = sc.nextLine();
+            String num = sc.nextLine();
+            Set<String> number = new HashSet(Arrays.asList(num));
 
-            subscribers.put(name, new HashSet<>(Arrays.asList(number)));
+            subscribers.put(name, new HashSet(Arrays.asList(number)));
 
             System.out.println(subscribers.toString());
 
 
-            System.out.println("Введите фамилию для поиска номера телефона");
-            String fam = sc.nextLine();
-//                map.forEach (new BiConsumer<String, Integer>() {
-//                    @Override
-//                    public void accept(String s, Integer integer) {
-//
-//                            if (fam.equals(s)) {
-//                            System.out.println(s + " " + integer);
-//                        }
-//
-//                }
+        System.out.println("Введите фамилию для поиска номера телефона");
+        String fam = sc.nextLine();
 
-        map.forEach();
+        for (Map.Entry<String, Integer> stringIntegerEntry : map.entrySet()) {
 
-        });
+            for (int i = 0; i < fam.length(); i++) {
+                if (fam.equals(stringIntegerEntry.getKey())) {
 
-    }
+                    System.out.println(stringIntegerEntry.getKey() + " " + stringIntegerEntry.getValue());
+
+                }
+            }
+
+        }
 
     }
-
-
+}
