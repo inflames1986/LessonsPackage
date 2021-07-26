@@ -37,7 +37,6 @@ public class Subscriber {
                 "Фамилия: '" + fam + '\'' +
                 ", Номера телефонов: " + numbers +
                 '}';
-    }
-}
+    }}
 
 

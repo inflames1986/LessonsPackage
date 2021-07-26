@@ -1,6 +1,7 @@
 package Lesson10;
 
 import java.util.*;
+import java.util.function.BiConsumer;
 
 public class Main {
     private static Object HashSet;
@@ -9,17 +10,17 @@ public class Main {
 
         /* Задание №1 */
 
-        Map <String, Integer> map = new TreeMap<>(); // зададим мапу в отсортированном виде
+        Map<String, Integer> map = new TreeMap<>(); // зададим мапу в отсортированном виде
 
-        List <String> startList = new ArrayList<>(Arrays.asList("apple", "mango", "grapefruit", "banana", "kiwi", "grape",
+        List<String> startList = new ArrayList<>(Arrays.asList("apple", "mango", "grapefruit", "banana", "kiwi", "grape",
                 "apple", "apple", "apple", "banana", "kiwi", "mango", "mango", "mango", "apple")); // создаем список из слов
 //        System.out.println(startList);// распечатываем исходное значение
 
 
         for (int i = 0; i < startList.toArray().length; i++) {//проходим по всей длине списка
-                map.put(startList.get(i), map.getOrDefault(startList.get(i), 0) + 1);//помещаем в Мапу ключ - слово
-                                                                                          //значение - если нулл - 0, иначе +1
-            }
+            map.put(startList.get(i), map.getOrDefault(startList.get(i), 0) + 1);//помещаем в Мапу ключ - слово
+            //значение - если нулл - 0, иначе +1
+        }
 //        }
         System.out.println(map);
 
@@ -33,7 +34,7 @@ public class Main {
         Subscriber subscriber6 = new Subscriber("Бургеров", new HashSet<>(Arrays.asList("5643633", "55573457")));
         Subscriber subscriber7 = new Subscriber("Котлетов", new HashSet<>(Arrays.asList("6345655", "7634676")));
 
-        Map <String, Set<String>> subscribers = new TreeMap<>();
+        Map<String, Set<String>> subscribers = new TreeMap<>();
         subscribers.put(subscriber1.getFam(), subscriber1.getNumbers());
         subscribers.put(subscriber2.getFam(), subscriber2.getNumbers());
         subscribers.put(subscriber3.getFam(), subscriber3.getNumbers());
@@ -43,9 +44,46 @@ public class Main {
         subscribers.put(subscriber7.getFam(), subscriber7.getNumbers());
 
 
+//        System.out.println(subscriber1.toString());
+        System.out.println(subscribers.toString());
 
-        System.out.println(subscriber1.toString());
-        System.out.println(subscribers);
+
+
+
+
+//    public void add() {
+
+            System.out.println("Введите данные абонента");
+            System.out.println("Введите Фамилию");
+
+            Scanner sc = new Scanner(System.in);
+            String name = sc.nextLine();
+            System.out.println("Введите номер телефона");
+            String number = sc.nextLine();
+
+            subscribers.put(name, new HashSet<>(Arrays.asList(number)));
+
+            System.out.println(subscribers.toString());
+
+
+            System.out.println("Введите фамилию для поиска номера телефона");
+            String fam = sc.nextLine();
+//                map.forEach (new BiConsumer<String, Integer>() {
+//                    @Override
+//                    public void accept(String s, Integer integer) {
+//
+//                            if (fam.equals(s)) {
+//                            System.out.println(s + " " + integer);
+//                        }
+//
+//                }
+
+        map.forEach();
+
+        });
 
     }
-}
+
+    }
+
+
