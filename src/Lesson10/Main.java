@@ -10,19 +10,19 @@ public class Main {
 
         /* Задание №1 */
 
-        Map<String, Integer> map = new TreeMap<>(); // зададим мапу в отсортированном виде
-
-        List<String> startList = new ArrayList<>(Arrays.asList("apple", "mango", "grapefruit", "banana", "kiwi", "grape",
-                "apple", "apple", "apple", "banana", "kiwi", "mango", "mango", "mango", "apple")); // создаем список из слов
-//        System.out.println(startList);// распечатываем исходное значение
-
-
-        for (int i = 0; i < startList.toArray().length; i++) {//проходим по всей длине списка
-            map.put(startList.get(i), map.getOrDefault(startList.get(i), 0) + 1);//помещаем в Мапу ключ - слово
-            //значение - если нулл - 0, иначе +1
-        }
+//        Map<String, Integer> map = new TreeMap<>(); // зададим мапу в отсортированном виде
+//
+//        List<String> startList = new ArrayList<>(Arrays.asList("apple", "mango", "grapefruit", "banana", "kiwi", "grape",
+//                "apple", "apple", "apple", "banana", "kiwi", "mango", "mango", "mango", "apple")); // создаем список из слов
+////        System.out.println(startList);// распечатываем исходное значение
+//
+//
+//        for (int i = 0; i < startList.toArray().length; i++) {//проходим по всей длине списка
+//            map.put(startList.get(i), map.getOrDefault(startList.get(i), 0) + 1);//помещаем в Мапу ключ - слово
+//            //значение - если нулл - 0, иначе +1
 //        }
-        System.out.println(map);
+////        }
+//        System.out.println(map);
 
         /*=================================================================================================*/
 
@@ -48,39 +48,43 @@ public class Main {
         System.out.println(subscribers.toString());
 
 
-
-
-
 //    public void add() {
 
-            System.out.println("Введите данные абонента");
-            System.out.println("Введите Фамилию");
+        System.out.println("Введите данные абонента");
+        System.out.println("Введите Фамилию");
 
-            Scanner sc = new Scanner(System.in);
-            String name = sc.nextLine();
-            System.out.println("Введите номер телефона");
-            String num = sc.nextLine();
-            Set<String> number = new HashSet(Arrays.asList(num));
+        Scanner sc = new Scanner(System.in);
+        String name = sc.nextLine();
+        System.out.println("Введите номер телефона");
+        String num = sc.nextLine();
+        Set<String> number = new HashSet(Arrays.asList(num));
 
-            subscribers.put(name, new HashSet(Arrays.asList(number)));
+        subscribers.put(name, new HashSet(Arrays.asList(number)));
 
-            System.out.println(subscribers.toString());
+        System.out.println(subscribers.toString());
 
 
         System.out.println("Введите фамилию для поиска номера телефона");
         String fam = sc.nextLine();
 
-        for (Map.Entry<String, Integer> stringIntegerEntry : map.entrySet()) {
+        for (Map.Entry<String, Set<String>> stringSetEntry : subscribers.entrySet()) {
 
-            for (int i = 0; i < fam.length(); i++) {
-                if (fam.equals(stringIntegerEntry.getKey())) {
+            if (fam.equals(stringSetEntry.getKey())) {
 
-                    System.out.println(stringIntegerEntry.getKey() + " " + stringIntegerEntry.getValue());
+//            System.out.println(stringSetEntry);
+                System.out.println(stringSetEntry.getKey() + " " + stringSetEntry.getValue());
 
-                }
             }
-
+//
+//            for (int i = 0; i < fam.length(); i++) {
+//                if (fam.equals(stringSetEntry.getKey())) {
+//
+//
+//
+//
+//                }
         }
 
     }
 }
+
