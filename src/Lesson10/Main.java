@@ -1,5 +1,7 @@
 package Lesson10;
 
+import com.sun.deploy.security.SelectableSecurityManager;
+
 import java.util.*;
 import java.util.function.BiConsumer;
 
@@ -68,9 +70,9 @@ public class Main {
         for (Map.Entry<String, Set<String>> stringSetEntry : subscribers.entrySet()) {
             if (fam.equals(stringSetEntry.getKey())) {
                 System.out.println(stringSetEntry.getKey() + " " + stringSetEntry.getValue());
-
             }
         }
     }
 }
+
 
