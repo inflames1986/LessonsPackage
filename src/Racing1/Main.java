@@ -1,4 +1,4 @@
-package Racing;
+package Racing1;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
